@@ -1,0 +1,32 @@
+/* Light Mode */
+:root[data-theme="light"] .terms-page {
+    background: linear-gradient(145deg, #ffffff, #676d73);
+}
+
+:root[data-theme="light"] .terms-card {
+    background: linear-gradient(145deg, #ffffff, #676d73);
+    color: #000000;
+}
+
+/* Dark Mode */
+:root[data-theme="dark"] .terms-page {
+    background: linear-gradient(145deg, #050228e0, #0b0c1f);
+}
+
+:root[data-theme="dark"] .terms-card {
+    background: linear-gradient(145deg, #050228e0, #0b0c1f);
+    color: #f1f1f1;
+}
+
+.btn.btn-success {
+    background-color: #28a745;
+    border: 2px solid #28a745;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}

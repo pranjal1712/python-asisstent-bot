@@ -1,0 +1,18 @@
+/* Light Mode */
+:root[data-theme="light"] .terms-page {
+    background: linear-gradient(145deg, #ffffff, #676d73);
+}
+:root[data-theme="light"] .terms-card {
+    background: linear-gradient(145deg, #ffffff, #676d73);
+    color: #000000;
+}
+
+/* Dark Mode */
+:root[data-theme="dark"] .terms-page {
+    background: linear-gradient(145deg, #050228e0, #0b0c1f);
+}
+
+:root[data-theme="dark"] .terms-card {
+    background: linear-gradient(145deg, #050228e0, #0b0c1f);
+    color: #f1f1f1;
+}

@@ -1,0 +1,130 @@
+/* Theme Variables */
+:root {
+    --bg: linear-gradient(145deg, #ffffff, #676d73);
+    --text: #222222;
+    --card: linear-gradient(145deg, #ffffff, #676d73);
+}
+
+[data-theme="dark"] {
+    --bg: linear-gradient(145deg, #050228e0, #0b0c1f);
+    --text: #e6eef8;
+    --card: linear-gradient(145deg, #050228e0, #0b0c1f);
+}
+
+/* Base Styles */
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+    padding-top: 4rem;
+    /* Space for navbar */
+}
+
+/* Chat Window Styling */
+.chat-window {
+    max-height: 60vh;
+    overflow-y: auto;
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Messages */
+.message {
+    word-wrap: break-word;
+    margin-bottom: 0.5rem;
+}
+
+/* Logo */
+.logo {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Scrollbar Styling (Optional) */
+.chat-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 0.4);
+    border-radius: 4px;
+}
+
+
+/* Light Mode (default) */
+[data-theme="light"] .animated-outer {
+    background: #f8f9fa;
+    /* page bg */
+}
+
+[data-theme="light"] .inner-glass {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #111;
+}
+
+[data-theme="light"] .inner-glass:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .animated-outer {
+    background: #000000;
+    /* page bg */
+}
+
+[data-theme="dark"] .inner-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f1f1f1;
+}
+
+[data-theme="dark"] .inner-glass:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Animations same for both themes */
+.card-anim {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.card-anim.l {
+    transform: translateY(16px) translateX(-10px);
+}
+
+.card-anim.r {
+    transform: translateY(16px) translateX(10px);
+}
+
+.card-anim.play.l {
+    animation: slideUpLeft .45s ease-out forwards;
+}
+
+.card-anim.play.r {
+    animation: slideUpRight .45s ease-out forwards;
+}
+
+@keyframes slideUpLeft {
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes slideUpRight {
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+

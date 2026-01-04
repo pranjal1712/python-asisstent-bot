@@ -1,0 +1,89 @@
+/* Container */
+.animated-outer {
+    padding: 24px;
+    border-radius: 12px;
+   
+}
+
+/* Initial state (no built-in animation here!) */
+.card-anim {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* Before-play offsets */
+.card-anim.l {
+    transform: translateX(-48px);
+}
+
+.card-anim.r {
+    transform: translateX(48px);
+}
+
+/* When in view, run the slide animations (animationDelay from inline style applies) */
+.card-anim.l.play {
+    animation: slideInLeft 600ms ease-out forwards;
+}
+
+.card-anim.r.play {
+    animation: slideInRight 600ms ease-out forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-48px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(48px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Glassmorphism card */
+.inner-glass {
+    background: rgba(0, 0, 0, 0.08);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Hover lift */
+.hover-anim:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 100px rgba(0, 200, 150, 0.25);
+    background: linear-gradient(135deg, rgba(0, 200, 150, 0.2), rgba(0, 150, 255, 0.2));
+    border: 2px solid rgba(0, 200, 150, 0.4);
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .card-anim,
+    .card-anim.l.play,
+    .card-anim.r.play {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
